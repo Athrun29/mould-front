@@ -19,7 +19,7 @@
       }
     },
     computed: {
-      ...mapState([
+      mapState([
         "testUrl"
       ])
     },
