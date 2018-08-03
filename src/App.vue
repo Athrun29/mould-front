@@ -101,12 +101,7 @@
           this.navTit.page = this.page[3];
         }
       }
-    },
-    computed: {
-      ...mapState([
-        "testUrl"
-      ])
-    },
+    }, 
     created: function () {
       this.changeTit()
     }

@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import generalCutter from '@/routers/generalCutter'
-import glassCutter from '@/routers/glassCutter'
-import ncJob from '@/routers/ncJob'
-import record from '@/routers/record'
+import generalCutter from '@/views/generalCutter'
+import glassCutter from '@/views/glassCutter'
+import ncJob from '@/views/ncJob'
+import record from '@/views/record'
 
 Vue.use(Router)
 

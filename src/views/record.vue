@@ -18,11 +18,6 @@
         dataTwo: ""
       }
     },
-    computed: {
-      ...mapState([
-        "testUrl"
-      ])
-    },
     methods: {
       postData() {
         this.$http.post("app/test/home",
