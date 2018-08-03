@@ -103,7 +103,7 @@
       }
     },
     computed: {
-      ...mapState([
+      mapState([
         "testUrl"
       ])
     },
