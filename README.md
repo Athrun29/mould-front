@@ -1,4 +1,4 @@
-# project
+# mould-front
 
 > A Vue.js project
 
