@@ -13,11 +13,7 @@
           </Menu>
         </Header>
         <Layout>
-<<<<<<< HEAD
-          <Sider hide-trigger :style="{background: '#fff'}">
-=======
           <Sider hide-trigger :style="{background: '#fff'}" >
->>>>>>> 712bc5336506e655a153a4e3f2a9694d6614b143
             <Menu active-name="1-1" theme="light" width="auto" :open-names="['1']">
               <Submenu name="1">
                 <template slot="title">
