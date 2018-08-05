@@ -13,10 +13,10 @@
 
     </div>
 
-    <div style="padding-bottom: 15px;">
-      <Button type="success" icon="md-add" @click="clearModel"> 新增</Button>
-      <Button type="error" icon="ios-trash-outline" @click="delData">删除</Button>
-    </div>
+    <!--<div style="padding-bottom: 15px;">-->
+      <!--<Button type="success" icon="md-add" @click="clearModel"> 新增</Button>-->
+      <!--<Button type="error" icon="ios-trash-outline" @click="delData">删除</Button>-->
+    <!--</div>-->
 
     <div class="table">
       <Table border ref="selection" :columns="tableHead" :data="tableBody" @on-selection-change="handleSelected"></Table>
@@ -77,11 +77,11 @@
           totalNum: 0
         },
         tableHead: [
-          {
-            type: 'selection',
-            width: 60,
-            align: 'center'
-          },
+          // {
+          //   type: 'selection',
+          //   width: 60,
+          //   align: 'center'
+          // },
           {
             title: '编号',
             key: 'code'
@@ -127,17 +127,17 @@
                     }
                   }
                 }, '编辑'),
-                h('Button', {
-                  props: {
-                    type: 'error',
-                    size: 'small'
-                  },
-                  on: {
-                    click: () => {
-                      this.remove(params.index)
-                    }
-                  }
-                }, '删除')
+                // h('Button', {
+                //   props: {
+                //     type: 'error',
+                //     size: 'small'
+                //   },
+                //   on: {
+                //     click: () => {
+                //       this.remove(params.index)
+                //     }
+                //   }
+                // }, '删除')
               ]);
             }
           }

@@ -19,7 +19,7 @@
     <!--</div>-->
 
     <div class="table">
-      <Table border ref="selection" :columns="tableHead" :data="tableBody" :width="1373"  @on-selection-change="handleSelected"></Table>
+      <Table border ref="selection" :columns="tableHead" :data="tableBody" :width="1313"  @on-selection-change="handleSelected"></Table>
     </div>
 
     <div style="padding-top:10px">
@@ -76,11 +76,11 @@
           totalNum: 0
         },
         tableHead: [
-          {
-            type: 'selection',
-            width: 60,
-            align: 'center'
-          },
+          // {
+          //   type: 'selection',
+          //   width: 60,
+          //   align: 'center'
+          // },
           {
             title: '原名称',
             key: 'srcName',
