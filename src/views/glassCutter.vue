@@ -168,9 +168,9 @@
       },
       //分页改变
       handlePage() {
-        this.pager.total = this.$refs.change.total;
+        this.pager.totalNum = this.$refs.change.total;
         this.pager.pageSize = this.$refs.change.currentPageSize;
-        this.pager.page = this.$refs.change.currentPage;
+        this.pager.pageNum = this.$refs.change.currentPage;
         this.postData();
       },
       // 表格操作
