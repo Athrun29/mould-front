@@ -4,6 +4,8 @@ import generalCutter from '@/views/generalCutter'
 import glassCutter from '@/views/glassCutter'
 import ncJob from '@/views/ncJob'
 import record from '@/views/record'
+import test from '@/views/test'
+
 
 Vue.use(Router)
 
@@ -33,6 +35,11 @@ export default new Router({
       path: '/record',
       name: 'record',
       component: record
+    },
+    {
+      path: '/test',
+      name: 'test',
+      component: test
     }
   ]
 })
