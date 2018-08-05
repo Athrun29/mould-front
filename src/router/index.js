@@ -20,6 +20,11 @@ export default new Router({
       component: glassCutter
     },
     {
+      path: '/',
+      name: 'glassCutter',
+      component: glassCutter
+    },
+    {
       path: '/ncJob',
       name: 'ncJob',
       component: ncJob

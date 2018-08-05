@@ -4,14 +4,20 @@
       <Layout>
         <Header>
           <Menu mode="horizontal" theme="dark" active-name="1">
-            <div class="layout-logo"></div>
+            <div class="layout-logo">
+              <img src="./assets/img/logo.jpeg" alt="">
+            </div>
             <div class="layout-nav">
-              <h4 style="color:#fff">苏州悌铭模具程序文件处理系统</h4>
+              <h2 style="color:#fff">苏州悌铭模具程序文件处理系统</h2>
             </div>
           </Menu>
         </Header>
         <Layout>
+<<<<<<< HEAD
           <Sider hide-trigger :style="{background: '#fff'}">
+=======
+          <Sider hide-trigger :style="{background: '#fff'}" >
+>>>>>>> 712bc5336506e655a153a4e3f2a9694d6614b143
             <Menu active-name="1-1" theme="light" width="auto" :open-names="['1']">
               <Submenu name="1">
                 <template slot="title">
@@ -39,17 +45,6 @@
                   </div>
                 </MenuItem>
               </Submenu>
-              <Submenu name="2">
-                <template slot="title">
-                  <Icon type="ios-navigate"></Icon>
-                  接口测试
-                </template>
-                <MenuItem name="2-1" :style="{padding: 0,height:'50px',lineHeight:'50px',textIndent:'43px'}">
-                  <div v-on:click="changeTit">
-                    <router-link to="/hello">接口测试</router-link>
-                  </div>
-                </MenuItem>
-              </Submenu>
             </Menu>
           </Sider>
           <Layout :style="{padding: '0 24px 24px'}">
@@ -57,7 +52,7 @@
               <BreadcrumbItem>{{navTit.title}}</BreadcrumbItem>
               <BreadcrumbItem>{{navTit.page}}</BreadcrumbItem>
             </Breadcrumb>
-            <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
+            <Content :style="{padding: '15px',  background: '#fff'}">
               <router-view/>
             </Content>
           </Layout>
@@ -74,8 +69,8 @@
     name: 'App',
     data() {
       return {
-        title: ["文件处理", "普通刀具库", "特殊刀具库", "接口测试"],
-        page: ["文件处理", "普通刀具库", "特殊刀具库", "接口测试"],
+        title: ["钻刀前缀", "刀具信息", "文件处理", "替换记录"],
+        page: ["钻刀前缀", "刀具信息", "文件处理", "替换记录"],
         navTit: {
           title: "",
           page: ""
@@ -87,23 +82,29 @@
     methods: {
       changeTit: function () {
         let url = this.$route.path;
-        if (url == '/special') {
-          this.navTit.title = this.title[2];
-          this.navTit.page = this.page[2];
-        } else if (url == '/home') {
+        if (url == '/glassCutter' || url == "/") {
           this.navTit.title = this.title[0];
           this.navTit.page = this.page[0];
-        } else if (url == '/general') {
+        } else if (url == '/ncJob') {
+          this.navTit.title = this.title[2];
+          this.navTit.page = this.page[2];
+        } else if (url == '/generalCutter') {
           this.navTit.title = this.title[1];
           this.navTit.page = this.page[1];
-        } else if (url == '/hello') {
+        } else if (url == '/record') {
           this.navTit.title = this.title[3];
           this.navTit.page = this.page[3];
         }
       }
-    }, 
+    },
+    computed: {
+      ...mapState([
+        "testUrl"
+      ])
+    },
     created: function () {
-      this.changeTit()
+      this.changeTit();
+
     }
   }
 </script>
@@ -128,27 +129,39 @@
   .ivu-layout {
     height: 100%;
     min-height: 516px;
+
   }
 
   .layout-logo {
     width: 100px;
-    height: 30px;
-    background: #5b6270;
+    height: 64px;
+    /*background: #5b6270;*/
     border-radius: 3px;
     float: left;
     position: relative;
-    top: 15px;
+    /*top: 15px;*/
     left: 20px;
   }
 
   .layout-nav {
     width: 420px;
-    margin: 0 auto;
-    margin-right: 20px;
+    margin-left: 200px;
+    /*margin: 0 auto;*/
+    /*margin-right: 20px;*/
+  }
+
+  .layout-logo img {
+    width: 80px;
+    height: 64px;
+    vertical-align: top;
   }
 
   a {
     display: block;
+  }
+
+  td {
+    white-space: nowrap;
   }
 
 

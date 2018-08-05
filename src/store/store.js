@@ -22,7 +22,8 @@ Vue.use(Vuex);
 export default new Vuex.Store({
   state: {
     testUrl:{
-      url:"http://192.168.0.113:8089",
+      // url:"http://192.168.0.113:8081/app",
+      url:"/app",
     }
   },
   getters: {
