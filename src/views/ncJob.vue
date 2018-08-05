@@ -21,57 +21,60 @@
 </template>
 
 <script>
-	import {mapState} from 'vuex'
+  import {mapState} from 'vuex'
 
-	export default {
-		name: "ncJob",
-		data() {
-			return {
-				param: {
-					input: "",
-					output: ""
-				},
-				res: "",
-				btnDis: false
-			}
-		},
-		computed: {
-			...mapState([
-				"testUrl"
-			])
-		},
-		methods: {
-			postData() {
-				if (this.param.input == "") {
-					this.$Message.info('输入目录不能为空');
-					return false
-				}
-				if (this.param.output == "") {
-					this.$Message.info('输出目录不能为空');
-					return false
-				}
-				this.btnDis = true;
-				this.$http.post(this.testUrl.url + "/job/ncJob",
-					this.param)
-					.then(function (res) {
-						if (res.body.success == 1) {
-							this.res = res.body.data;
-						} else {
-							this.res = "处理失败"
-						}
-						this.btnDis = false;
-					})
-			},
-			clearModel() {
-				this.param.input = "";
-				this.param.output = "";
-				this.res = "";
-			}
-		},
-		created: function () {
+  export default {
+    name: "ncJob",
+    data() {
+      return {
+        param: {
+          input: "",
+          output: ""
+        },
+        res: "",
+        btnDis: false
+      }
+    },
+    computed: {
+      ...mapState([
+        "testUrl"
+      ])
+    },
+    methods: {
+      postData() {
+        if (this.param.input == "") {
+          this.$Message.info('输入目录不能为空');
+          return false
+        }
+        if (this.param.output == "") {
+          this.$Message.info('输出目录不能为空');
+          return false
+        }
+        this.btnDis = true;
+        this.$http.post(this.testUrl.url + "/job/ncJob",
+          this.param)
+          .then(function (res) {
+            if (res.body.success == 1) {
+              this.res = res.body.data;
+            } else {
+              this.res = "处理失败"
+            }
+            this.btnDis = false;
+          },function () {
+            this.res = "处理失败";
+            this.btnDis = false;
+          })
+      },
+      clearModel() {
+        this.param.input = "";
+        this.param.output = "";
+        this.res = "";
+      }
+    },
+    created: function () {
 
-		}
-	}
+    }
+  }
 </script>
 
 <style>
